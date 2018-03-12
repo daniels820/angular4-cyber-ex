@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+  height: 100%;
+  background: black;
+}
+
+body {
+  font-size: 14px;
+  width: 90%;
+  min-height: 85%;
+  margin: auto;
+  margin-top: 4%;
+  background: #EDF2F9;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}

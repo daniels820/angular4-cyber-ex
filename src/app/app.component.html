@@ -1,0 +1,32 @@
+<div class="flex-container" #myform>
+  <div class="flex-item">
+    <black-boxes [deviceGroups]="device_groups" (devicesCheckedEmitter)="devicesChecked($event)"></black-boxes>
+  </div>
+  <div class="flex-item">
+    <protocols [protocols]="protocols" (protocolsCheckedEmitter)="protocolsChecked($event)"></protocols>
+  </div>
+  <div class="flex-item">
+    <time-period [timePeriods]="time_periods" (timeCheckedEmitter)="timeChecked($event)"></time-period>
+  </div>
+  <div class="flex-item">
+    <summary [deviceList]="deviceList" [protocolsList]="protocolsList" [timeList]="timeList" (clearEmitter)="clear($event)" (startLearningEmitter)="startLearning($event)">
+    </summary>
+  </div>
+
+  <span *ngIf="spinner" class="spinner">
+    <div class="preloader-wrapper big active">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="gap-patch">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </span>
+
+</div>

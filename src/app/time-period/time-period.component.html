@@ -1,0 +1,12 @@
+<header>
+  {{title}}
+</header>
+<div class="timePeriods">
+  <ul>
+    <li *ngFor="let timePeriod of _timePeriods;">
+      <input (click)="checkTime(timePeriod.id, timePeriodIndex)" class="with-gap" 
+      type="radio" id="time {{timePeriod.id}}" name="radio"/>
+      <label for="time {{timePeriod.id}}">{{timePeriod.name}}</label>
+    </li>
+  </ul>
+</div>

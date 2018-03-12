@@ -1,0 +1,11 @@
+<header>
+  {{title}}
+</header>
+<div class="protocols">
+  <ul #protocols>
+    <li *ngFor="let protocol of _protocols; let protocolIndex = index">
+      <input (click)="checkProtocol(protocol.id, protocolIndex)" type="checkbox" id="protocol {{protocol.id}}" class="filled-in"/>
+      <label for="protocol {{protocol.id}}">{{protocol.name}}</label>
+    </li>
+  </ul>
+</div>

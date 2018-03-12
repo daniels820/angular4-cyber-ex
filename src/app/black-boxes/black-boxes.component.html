@@ -1,0 +1,25 @@
+<header>
+  {{title}}
+</header>
+
+<div *ngFor="let group of device_groups; let groupIndex = index;" class="collapsible" data-collapsible="accordion">
+  <header class="collapsible-header">
+    <i *ngIf="group.active" (click)="toggleExpand(groupIndex)" id={{group.id}} class="material-icons">arrow_drop_down</i>
+    <i *ngIf="!group.active" (click)="toggleExpand(groupIndex)" id={{group.id}} class="material-icons point-right">arrow_drop_up</i>
+    <span class="header-title">
+      <input (click)="checkGroup(groupIndex)" type="checkbox" id={{group.id}}/> {{group.name}}
+    </span>
+  </header>
+
+  <div [hidden]="!group.active">
+    <div *ngFor="let device of group.devices; let deviceIndex = index" class="collapsible-body">
+      <li>
+        <input *ngIf="device.active == 1" (click)="checkDevice(group.id,device.id, deviceIndex, groupIndex)" type="checkbox" class="filled-in"
+          id={{device.id}} checked/>
+        <input *ngIf="device.active == 0" (click)="checkDevice(group.id,device.id, deviceIndex, groupIndex)" type="checkbox" class="filled-in"
+          id={{device.id}}/>
+        <label for={{device.id}}>{{device.name}}</label>
+      </li>
+    </div>
+  </div>
+</div>

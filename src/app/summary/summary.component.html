@@ -1,0 +1,55 @@
+<header>
+  {{title}}
+</header>
+<section class="lists-section">
+  <div class="list">
+    <h3>
+      1. Device List
+    </h3>
+    <div *ngFor="let device of _deviceList">
+      <ul>
+        <li>
+          <label>{{device.name}}</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="list">
+    <h3>
+      2. Protocols List
+    </h3>
+    <div *ngFor="let protocol of _protocolsList">
+      <ul>
+        <li>
+          <label>{{protocol.name}}</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="list">
+    <h3>
+      3. Period
+    </h3>
+    <div>
+      <ul>
+        <li>
+          <label>{{_timePeriod.name}}</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="btn-section">
+
+  <button class="btn-clear" (click)="clear()">
+    Clear
+  </button>
+
+  <button class="btn-start" (click)="startLearning()">
+    <span>
+      &#9654; Start Learning
+    </span>
+  </button>
+  
+</section>
